@@ -17,14 +17,33 @@
 //     p = &number;
 //     printf("%d",*p); // 역참조~
 // }
+// int main() {
+//     int a = 10;
+//     int *p;
+//     p = &a;
+
+//     *p = 36; //역참조해서 값 저장
+
+//     printf("%d %d", *p, a);
+//     return 0;
+// }
+
+#include <stdio.h>
 int main() {
-    int a = 10;
-    int *p;
-    p = &a;
+    char *pc;
+    int *pi;
+    double *pd;
 
-    *p = 36; //역참조해서 값 저장
+    pc = (char *)10000;
+    pi = (int *)10000;
+    pd = (double *)10000;
+    printf("증가전 pc = %d, pi = %d, pd = %d\n", pc, pi, pd);
 
-    printf("%d %d", *p, a);
+    pc++;
+    pi++;
+    pd++;
+
+    printf("증가후 pc = %d, pi = %d, pd = %d\n", pc, pi, pd);
 
     return 0;
 }
